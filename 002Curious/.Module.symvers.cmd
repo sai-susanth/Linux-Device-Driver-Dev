@@ -1,1 +1,0 @@
-savedcmd_/home/susanth/Embedded_Programes/DeviceDriverDev/workspace/customDrivers/002Curious/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/susanth/Embedded_Programes/DeviceDriverDev/workspace/customDrivers/002Curious/Module.symvers -T /home/susanth/Embedded_Programes/DeviceDriverDev/workspace/customDrivers/002Curious/modules.order -i Module.symvers -e 
