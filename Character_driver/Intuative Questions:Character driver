@@ -1,0 +1,8 @@
+1. What is a device driver?
+ans: A device driver is a kernel module that provides an interface between the operating system and a hardware device. It abstracts hardware-specific details by translating generic kernel or user requests into device-specific operations while managing initialization, communication, interrupts, synchronization, and resource allocation.
+
+2.What is a character device driver?
+ans: A character device driver is a Linux kernel driver that provides a file-like interface for devices that exchange data as a sequential stream of bytes. Applications access the device using standard file operations such as open(), read(), write(), ioctl(), and close(), while the driver translates these operations into hardware-specific actions.
+
+3. How does Linux know that when an application opens /dev/mydevice, it should invoke your driver's open() function and not some other driver's?
+ans: To solve this we need a Unique identifier, Linux solves this using device numbers. Each Character device needs Unique Major and Minor number, together thet form dev_t . 
