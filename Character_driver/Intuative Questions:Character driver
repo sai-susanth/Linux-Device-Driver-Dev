@@ -6,3 +6,5 @@ ans: A character device driver is a Linux kernel driver that provides a file-lik
 
 3. How does Linux know that when an application opens /dev/mydevice, it should invoke your driver's open() function and not some other driver's?
 ans: To solve this we need a Unique identifier, Linux solves this using device numbers. Each Character device needs Unique Major and Minor number, together thet form dev_t . 
+Inorder to store the information we will need the struct cdev. The driver will not be auto registered at time of loading , we will have to init and register the driver
+using cdev_init() and cdev_add() to register the driver with the kernel.
