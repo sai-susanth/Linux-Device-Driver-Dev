@@ -8,3 +8,25 @@ ans: A character device driver is a Linux kernel driver that provides a file-lik
 ans: To solve this we need a Unique identifier, Linux solves this using device numbers. Each Character device needs Unique Major and Minor number, together thet form dev_t . 
 Inorder to store the information we will need the struct cdev. The driver will not be auto registered at time of loading , we will have to init and register the driver
 using cdev_init() and cdev_add() to register the driver with the kernel.
+Application
+    │
+    ▼
+open("/dev/mydevice")
+    │
+    ▼
+VFS (Virtual File System)
+    │
+    ▼
+Looks up /dev/mydevice
+    │
+    ▼
+Gets device number (Major 240, Minor 0)
+    │
+    ▼
+Finds registered cdev for Major 240
+    │
+    ▼
+Uses cdev->ops
+    │
+    ▼
+Calls my_open()
